@@ -32,26 +32,25 @@ The following features have been implemented in the project:
 
 >Note: Followed steps actual for the Tomcat web server if you will use another mast deploying project according to your web server.
 
-After installing the required software, you can download the project source code from the GitHub repository:
+2. After installing the required software, you can download the project source code from the GitHub repository:
 
 ```command
 git clone https://github.com/BusyhinD/taxi-service
 ```
-### 📋 Configuration
-To configure the project, you need to edit the ConnectionUtil class (in the **_util_** project folder) to pass the login, password, your database URL, and driver for your database management system.
+3. To configure the project, you need to edit the ConnectionUtil class (in the **_util_** project folder) to pass the login, password, your database URL, and driver for your database management system.
 
-Then, you can build the project using Maven:
+4. Then, you can build the project using Maven:
 
 ```command
 cd taxi-service
 mvn package
 ```
-This will create a WAR (Web Application Archive) file in the target directory, which you can deploy to Tomcat:
+5. This will create a WAR (Web Application Archive) file in the target directory, which you can deploy to Tomcat:
 
 ```command
 cp target/taxi-service.war $CATALINA_HOME/webapps
 ```
 >
-Finally, you can start Tomcat (or your web-server) and access the application by navigating to http://localhost:8080/taxi in your web browser.
+6. Finally, you can start Tomcat (or your web-server) and access the application by navigating to http://localhost:8080/taxi in your web browser.
 ## ☕ Conclusion
 That's it! With the Taxi Service project, you can manage your taxi services easily and efficiently. If you have any questions or issues with the project, please don't hesitate to contact me.
