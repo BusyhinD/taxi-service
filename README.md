@@ -28,7 +28,9 @@ The following features have been implemented in the project:
    + MySQL 8.0 or another RDBMS.
    + Tomcat 9.0 or another web-server.
    
->Note: you can download and install these software packages by following the instructions on their respective websites. Followed steps actual for the Tomcat web server if you will use another mast deploying project according to your web server.
+>Note: You can download and install these software packages by following the instructions on their respective websites.
+
+>Note: Followed steps actual for the Tomcat web server if you will use another mast deploying project according to your web server.
 
 After installing the required software, you can download the project source code from the GitHub repository:
 
