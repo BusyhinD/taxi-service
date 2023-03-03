@@ -23,7 +23,7 @@ The following features have been implemented in the project:
 ## 🛠️ Getting Started
 1. To run the project, you will need to have the following software installed on your system:
 
-   + Java Development Kit (JDK) 1.8 or later.  
+   + Java Development Kit (JDK) 11 or later.  
    + Apache Maven 3.6.0 or later.
    + MySQL 8.0 or another RDBMS.
    + Tomcat 9.0 or another web-server.
