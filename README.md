@@ -50,7 +50,7 @@ mvn package
 ```command
 cp target/taxi-service.war $CATALINA_HOME/webapps
 ```
->
-6. Finally, you can start Tomcat (or your web-server) and access the application by navigating to http://localhost:8080/taxi in your web browser.
+6. All the SQL queries required to create the database schema and tables for the project can be found in the init_db.sql file (in the **_resources_** project folder).
+7. Finally, you can start Tomcat (or your web-server) and access the application by navigating to http://localhost:8080/taxi in your web browser.
 ## ☕ Conclusion
-That's it! With the Taxi Service project, you can manage your taxi services easily and efficiently. If you have any questions or issues with the project, please don't hesitate to contact me.
+That's it! With the Taxi-Service project, you can manage your taxi services easily and efficiently. If you have any questions or issues with the project, please don't hesitate to contact me.
