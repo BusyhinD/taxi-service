@@ -5,11 +5,14 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import taxi.lib.Injector;
 import taxi.model.Manufacturer;
 import taxi.service.ManufacturerService;
 
 public class AddManufacturerController extends HttpServlet {
+    private static final Logger logger = LogManager.getLogger(AddManufacturerController.class);
     private static final Injector injector = Injector.getInstance("taxi");
     private final ManufacturerService manufacturerService = (ManufacturerService) injector
             .getInstance(ManufacturerService.class);
@@ -24,8 +27,8 @@ public class AddManufacturerController extends HttpServlet {
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String name = req.getParameter("name");
         String country = req.getParameter("country");
-        Manufacturer manufacturer = new Manufacturer(name, country);
-        manufacturerService.create(manufacturer);
+        Manufacturer manufacturer = manufacturerService.create(new Manufacturer(name, country));
+        logger.info("Manufacturer with id = {} was created", manufacturer.getId());
         resp.sendRedirect(req.getContextPath() + "/manufacturers/add");
     }
 }

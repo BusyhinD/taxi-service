@@ -5,6 +5,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import taxi.lib.Injector;
 import taxi.model.Car;
 import taxi.model.Driver;
@@ -12,6 +14,7 @@ import taxi.service.CarService;
 import taxi.service.DriverService;
 
 public class AddDriverToCarController extends HttpServlet {
+    private static final Logger logger = LogManager.getLogger(AddDriverToCarController.class);
     private static final Injector injector = Injector.getInstance("taxi");
     private final CarService carService = (CarService) injector.getInstance(CarService.class);
     private final DriverService driverService = (DriverService) injector
@@ -30,6 +33,8 @@ public class AddDriverToCarController extends HttpServlet {
         Driver driver = driverService.get(driverId);
         Car car = carService.get(carId);
         carService.addDriverToCar(driver, car);
+        logger.info("Driver was added to car. Params: driver id = {}, car id = {}",
+                driver.getId(), car.getId());
         resp.sendRedirect(req.getContextPath() + "/cars/drivers/add");
     }
 }

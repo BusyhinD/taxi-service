@@ -5,11 +5,14 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import taxi.lib.Injector;
 import taxi.model.Driver;
 import taxi.service.DriverService;
 
 public class AddDriverController extends HttpServlet {
+    private static final Logger logger = LogManager.getLogger(AddDriverController.class);
     private static final Injector injector = Injector.getInstance("taxi");
     private final DriverService driverService = (DriverService) injector
             .getInstance(DriverService.class);
@@ -32,8 +35,8 @@ public class AddDriverController extends HttpServlet {
         String name = req.getParameter("name");
         String licenseNumber = req.getParameter("license_number");
         String login = req.getParameter("login");
-        Driver driver = new Driver(name, licenseNumber, login, password);
-        driverService.create(driver);
+        Driver driver = driverService.create(new Driver(name, licenseNumber, login, password));
+        logger.info("Driver with id = {} was created", driver.getId());
         resp.sendRedirect(req.getContextPath() + "/drivers/add");
     }
 }
