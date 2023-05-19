@@ -30,7 +30,7 @@ The following features have been implemented in the project:
    
 >Note: You can download and install these software packages by following the instructions on their respective websites.
 
->Note: Followed steps actual for the Tomcat web server if you will use another mast deploying project according to your web server.
+>Note: Followed steps actually for the Tomcat web server if you will use another you must deploy the project according to your web server.
 
 2. After installing the required software, you can download the project source code from the GitHub repository:
 
